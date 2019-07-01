@@ -1,2 +1,2 @@
-# Homeworks
+# AppAcademy Assignments
 App Academy Homework
