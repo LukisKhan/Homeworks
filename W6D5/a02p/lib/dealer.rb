@@ -6,7 +6,7 @@ class Dealer < Player
   def initialize
     super("dealer", 0)
 
-    @bets = {}
+    @bets = Hash.new(0)
   end
 
   def place_bet(dealer, amt)
@@ -26,13 +26,9 @@ class Dealer < Player
   end
 
   def pay_bets
-    @bets.each do |p , bet|
-      p self.hand.points
-      # my = self.hand.points
-      # his = p.hand.points
-      # if my > his
-        p.pay_winnings(bet)
-      # end
+    @bets.keys.each do |p|
+      p.pay_winnings(@bets[p]) #unless player.hand.beats?(self.hand)
+
     end
   end
 end

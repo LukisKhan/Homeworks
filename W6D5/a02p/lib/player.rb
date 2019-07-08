@@ -20,6 +20,7 @@ class Player
     if bet_amt > @bankroll
       raise "player can't cover bet"
     end
+    @bankroll -= bet_amt
     dealer.take_bet(self, bet_amt)
   end
 end
