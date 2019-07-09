@@ -14,19 +14,29 @@ class Hand
   def points
     values_hash = Card::VALUE_STRINGS
     val = 0
-    ace = false
+    ace = 0
     cards.each do |card|
       if card.value != :ace 
         val += values_hash[card.value].to_i
       else
-        ace = true
+        ace += 1
       end
     end
-    if ace && val <= 10
+    if ace > 0 && val <= 10
       val += 11
-    elsif ace
+      ace -= 1
+    elsif ace > 0
       val += 1
+      ace -= 1
     end
+     if ace > 0 && val <= 10
+      val += 11
+      ace -= 1
+    elsif ace > 0
+      val += 1
+      ace -= 1
+    end
+    
     val
   end
 

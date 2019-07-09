@@ -16,8 +16,6 @@ class Dealer < Player
   def play_hand(deck)
     while @hand.points < 17
       @hand.hit(deck)
-    
-
     end
   end
 
@@ -26,8 +24,10 @@ class Dealer < Player
   end
 
   def pay_bets
-    @bets.keys.each do |p|
-      p.pay_winnings(@bets[p]) #unless player.hand.beats?(self.hand)
+    @bets.each do |p, amt|
+      if p.hand.beats?(self.hand)
+        p.pay_winnings(amt * 2)
+      end
 
     end
   end
