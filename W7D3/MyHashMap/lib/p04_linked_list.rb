@@ -1,3 +1,5 @@
+require "byebug"
+
 class Node
   attr_reader :key
   attr_accessor :val, :next, :prev
@@ -24,8 +26,8 @@ end
 class LinkedList
   include Enumerable
   def initialize
-    @head = Node.new("head", "val")
-    @tail = Node.new("tail", "val")
+    @head = Node.new("changed", "val")
+    @tail = Node.new("changed", "val")
     @head.next = @tail
     @tail.prev = @head
   end
@@ -48,22 +50,52 @@ class LinkedList
   end
 
   def get(key)
+    each do |node|
+      return node.val if node.key == key 
+    end
   end
 
   def include?(key)
+    !get(key).nil?
   end
 
   def append(key, val)
+    new_node = Node.new(key, val)
+    # old_first = first
+    # old_last = last
+    new_node.next = @tail
+    new_node.prev = @tail.prev
 
+    # @head.next.prev = new_node
+    @tail.prev.next = new_node
+    @tail.prev = new_node
+  
+    # p new_node.next
+    # p new_node.prev
   end
 
   def update(key, val)
+    each do |node|
+      node.val = val if node.key == key 
+    end
+
   end
 
   def remove(key)
+    each do |node|
+      if node.key == key
+        node.prev.next = node.next
+        node.next.prev = node.prev
+      end
+    end
   end
 
-  def each
+  def each(&prc)
+    current_node = first
+    until current_node == @tail
+      prc.call(current_node)
+      current_node = current_node.next
+    end
   end
 
   # uncomment when you have `each` working and `Enumerable` included
