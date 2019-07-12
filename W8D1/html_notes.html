@@ -1,0 +1,52 @@
+CSS Notes
+DISPLAY: NONE, BLOCK, INLINE.
+.none {
+    display: none;
+}    
+
+.block {
+    display: block;
+    background: pink;
+}
+
+.inline {
+    display: inline;
+    background: orange;
+}
+
+strong {
+    backgound: yellow;
+    padding: 10px;
+    display: block
+}
+strong {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background: yellow;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap
+    justify-content: space-around
+        flex-start, flex-end, 
+        flex-center, flex-stretch
+        flex-baseline
+    align-items: stretch | flex-start
+    align-content
+}
+display can be: 
+    inline: a, strong, span, time
+    block
+    inline-block
+    flex
+    none
+
+######### HTML STARTS
+<div class='none'> THIS WON'T DISPLAY</div>
+<div class='block'> THIS IS A BLOCK</div>
+<div class='inline'>THIS IS AN INLINE</div>
+this will be <strong>strong and bold </strong> and push 
+    everything to the next line
