@@ -35,21 +35,55 @@ c)  SELECT title, director
 d)  SELECT title
     FROM movies
     WHERE title LIKE 'WALL-_';
-4)
-a)  
-b)  
-c)  
-d)  
-5)
-a)  
-b)  
-c)  
-d)  
+4) DISTINCT, ORDER BY, LIMIT, OFFSET
+a)  SELECT DISTINCT director
+    FROM movies
+    ORDER BY director;
+b)  SELECT title
+    FROM movies
+    ORDER BY year DESC LIMIT 4;
+c)  SELECT title
+    FROM movies
+    ORDER BY title LIMIT 5;
+d)  SELECT title
+    FROM movies
+    ORDER BY title LIMIT 5 OFFSET 5;
+5) Intro to sub-query
+a)  SELECT city, population
+    FROM North_american_cities
+    WHERE country = 'Canada';
+b)  SELECT city, latitude
+    FROM North_american_cities
+    WHERE country = 'United States' ORDER BY latitude DESC;
+c)  SELECT city, longitude
+    FROM North_american_cities
+    WHERE longitude < (
+        SELECT longitude
+        FROM North_american_cities
+        WHERE city = 'Chicago'
+    ) ORDER BY longitude;
+d)  SELECT city, population
+    FROM North_american_cities
+    WHERE country = 'Mexico' 
+        ORDER BY population DESC
+        LIMIT 2;
+e)  SELECT city, population
+    FROM North_american_cities
+    WHERE country = 'United States'
+        ORDER BY population DESC
+        LIMIT 2 OFFSET 2;
 6)
-a)  
-b)  
-c)  
-d)  
+a)  SELECT title, domestic_sales, International_sales
+    FROM Boxoffice
+    JOIN movies ON movie_id = movies.id;
+b)  SELECT title, domestic_sales, international_sales
+    FROM boxoffice
+    JOIN movies ON movie_id = movies.id
+    WHERE international_sales > domestic_sales;
+c)  SELECT title, movie_id, rating
+    FROM movies
+    JOIN boxoffice ON movie_id = id
+    ORDER BY rating DESC;
 7)
 a)  
 b)  
