@@ -133,6 +133,7 @@ c)  SELECT role, SUM(Years_employed)
     HAVING role = 'Engineer';
 12) Order of execution: i) FROM, JOIN ii) WHERE iii) GROUP BY iv) HAVING v) SELECT 
                         vi) DISTINCT vii) ORDER BY viii) LIMIT, OFFSET
+                        UNION / UNION ALL / INTERSECT / EXCEPT happens before ORDER BY
 a)  SELECT director, COUNT (title)
     FROM Movies
     GROUP BY director;
@@ -174,3 +175,8 @@ b)  ALTER TABLE movies
     ADD Language DEFAULT 'English';
 18) Dropping table
     DROP TABLE IF EXISTS movies;
+19) Sub-query can be used in 
+    SELECT ()
+    FROM JOIN ON ()
+    WHERE ()
+    IN or NOT IN ()
