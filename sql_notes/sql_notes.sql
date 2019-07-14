@@ -120,36 +120,53 @@ b)  SELECT role, AVG(Years_employed)
 c)  SELECT Building, SUM(Years_employed)
     FROM Employees
     GROUP BY Building;
-11)
-a)  
-b)  
-c)  
-d)  
-12)
-a)  
-b)  
-c)  
-d)  
-13)
-a)  
-b)  
-c)  
-d)  
-14)
-a)  
-b)  
-c)  
-d)  
-15)
-a)  
-b)  
-c)  
-d)  
-16)
-a)  
-b)  
-c)  
-d)  
+11) COUNT, GROUP BY, HAVING
+a)  SELECT COUNT (name)
+    FROM Employees
+    WHERE role = 'Artist';
+b)  SELECT role, COUNT(name)
+    FROM Employees
+    GROUP BY role;
+c)  SELECT role, SUM(Years_employed)
+    FROM Employees
+    GROUP BY role
+    HAVING role = 'Engineer';
+12) Order of execution: i) FROM, JOIN ii) WHERE iii) GROUP BY iv) HAVING v) SELECT 
+                        vi) DISTINCT vii) ORDER BY viii) LIMIT, OFFSET
+a)  SELECT director, COUNT (title)
+    FROM Movies
+    GROUP BY director;
+b)  SELECT director, SUM(Domestic_sales + International_sales) AS Total
+    FROM movies
+    JOIN Boxoffice ON id = movie_id
+    GROUP BY director;
+13) INSERT INTO table
+a)  INSERT INTO movies (title, Director)
+    VALUES ('Toy Story 4', 'M Night Shyamalan');
+b)  INSERT INTO boxoffice 
+    VALUES (4, 8.7, 340000000, 270000000);
+14) Update
+a)  UPDATE movies
+    SET director = 'John Lasseter'
+    WHERE title = 'A Bug''s Life';
+b)  UPDATE movies
+    SET year = 1999
+    WHERE title = 'Toy Story 2';
+c)  UPDATE movies
+    SET title = 'Toy Story 3', Director = 'Lee Unkrich'
+    WHERE title = 'Toy Story 8';
+15) Delete
+a)  DELETE FROM movies
+    WHERE year < 2005;
+b)  DELETE FROM movies
+    WHERE director = 'Andrew Stanton';
+16) Creating new tables
+a)  CREATE TABLE Database (
+        id PRIMARY KEY,
+        name TEXT,
+        version FLOAT,
+        download_count INT
+    );
 17) Adding column
 a)  ALTER TABLE movies
     ADD Aspect_ratio FLOAT;
