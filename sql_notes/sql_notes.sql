@@ -72,7 +72,7 @@ e)  SELECT city, population
     WHERE country = 'United States'
         ORDER BY population DESC
         LIMIT 2 OFFSET 2;
-6)
+6) Join ON id
 a)  SELECT title, domestic_sales, International_sales
     FROM Boxoffice
     JOIN movies ON movie_id = movies.id;
@@ -84,26 +84,42 @@ c)  SELECT title, movie_id, rating
     FROM movies
     JOIN boxoffice ON movie_id = id
     ORDER BY rating DESC;
-7)
-a)  
-b)  
-c)  
-d)  
-8)
-a)  
-b)  
-c)  
-d)  
-9)
-a)  
-b)  
-c)  
-d)  
-10)
-a)  
-b)  
-c)  
-d)  
+7) GROUP BY DISTINCT
+a)  SELECT building
+    FROM Employees
+    GROUP BY building;
+b)  SELECT building_name, capacity
+    FROM Buildings;
+c)  SELECT DISTINCT building_name, role
+    FROM Buildings
+    LEFT JOIN Employees ON Building_name = Building;
+8) LEFT JOIN, IS NULL
+a)  SELECT name, role
+    FROM Employees
+    WHERE Building IS NULL;
+b)  SELECT Building_name
+    FROM Buildings
+    LEFT JOIN Employees ON Building_name = Building
+    WHERE Employees.name IS NULL;
+9) Math operation in SELECT, WHERE
+a)  SELECT title, (Domestic_sales + International_sales)/1000000 AS Sales_in_millions
+    FROM movies
+    JOIN Boxoffice ON id = movie_id;
+b)  SELECT title, rating * 10
+    FROM movies
+    JOIN Boxoffice ON id = movie_id;
+c)  SELECT title
+    FROM movies
+    WHERE year % 2 = 0;
+10) Aggregate funcitons: MAX
+a)  SELECT name, MAX(Years_employed)
+    FROM Employees;
+b)  SELECT role, AVG(Years_employed)
+    FROM Employees
+    GROUP BY ROLE;
+c)  SELECT Building, SUM(Years_employed)
+    FROM Employees
+    GROUP BY Building;
 11)
 a)  
 b)  
