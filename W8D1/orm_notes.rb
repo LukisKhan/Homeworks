@@ -38,7 +38,8 @@ ORM: interacting ruby class with db tables
         end
         def create
             raise " already in database" if @id
-            PlayDBConnection.instance.execute(<<-SQL, @title, @year, @playwright_id
+            #heredoc <<-SQL    SQL
+            PlayDBConnection.instance.execute(<<-SQL, @title, @year, @playwright_id)
                 INSERT INTO
                     plays (title, year, playwright_id)
                 VALUES
@@ -59,3 +60,12 @@ ORM: interacting ruby class with db tables
                     id = ?
             SQL
         end
+
+pry.
+require './plays.rb'
+Play.all
+salesman = Play.new('title' => 'Death of a salesman', 'year' => 1999, 
+                    'playwright_id' => 1)
+Play.all  #has not added new play
+salesman.create
+Play.all
