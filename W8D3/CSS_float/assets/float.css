@@ -1,0 +1,141 @@
+/*Starting from the skeleton, update the the float.css stylesheet. In this exercise, we will be updating our navbar to use the float property and create a basic fluid grid system for our main content. Let us begin. 🙏
+
+Instead of making the nav into an inline-block element, use float to put our nav in the top-right.
+Just for fun, float the logo to the left and then clear-fix the vertical collapse problem.
+Replace the fixed pixel widths of our aside and main content section with a fluid grid system similar to those seen in the CSS Grid System video. Add all grid rules to custom_grid.css. Note that this will require updating index.html with respective container class names.
+You may need to give your recipe image a width of 100% so it expands to fit the entire figure and does not default to its natural fixed pixel width. Do this for all images by applying it to css_custom_reset.css.
+*/
+
+
+
+
+body {
+  /* If the user cannot load the Arial font, the sans-serif font is used */
+  font-family: Arial, sans-serif;
+  background-color: #FEFFF1;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+/* This selector selects ALL anchor tag children of ALL list elements that
+are children of an Unordered Lsit element */
+ul li a, figcaption a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* This selector selects only IMMEDIATE (1 level deep) image element children
+of the header element */
+header > img {
+  float: left;
+}
+
+.clearfix{
+overflow: auto;
+}
+
+/* Selects all elements with the class attribute "ingredients-list" */
+.ingredients-list {
+
+  /* The list style property is shorthand for multiple list-style properties*/
+  list-style: square inside;
+}
+
+ol {
+  list-style: upper-roman inside;
+}
+
+.user_review h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(../assets/stars.png);
+    vertical-align: bottom;
+}
+
+input[type="radio"]:checked {
+  background-position: 30px 30px;
+}
+
+
+input[type="submit"]:last-child {
+    background: gold;
+}
+
+input:last-child:hover {
+    -webkit-filter: brightness(90%);
+}
+
+ol li:nth-of-type(2n) {
+  background-color: whitesmoke;
+  margin: 10px 0;
+}
+
+h2 + .user_review {
+    border-top: 1px solid black;
+}
+
+nav {
+    display: inline-block;
+    float: right;
+    box-sizing: border-box
+}
+
+nav ul li {
+    display:  inline-block;
+}
+
+nav ul li a {
+    padding: 20px;
+    display: block;
+}
+
+body {
+    margin: 0 auto; /* Common Centering Technique */
+  }
+
+section {
+
+    display: inline-block;
+    vertical-align: top;
+}
+
+aside {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.ingredients-list li {
+ margin: 15px 0px;
+}
+
+input[type="text"], select {
+  display: block;
+  width: 175px;
+}
+
+select {
+  margin: 10px 0;
+  width: 180px;
+}
+
+textarea {
+  width: 350px;
+}
+
+label {
+  display: block;
+}
+

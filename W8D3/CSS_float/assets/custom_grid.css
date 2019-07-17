@@ -1,0 +1,19 @@
+/* Replace the fixed pixel widths of our aside and main content section with a fluid grid system similar to those seen in the CSS Grid System video. Add all grid rules to custom_grid.css. Note that this will require updating index.html with respective container class names.
+You may need to give your recipe image a width of 100% so it expands to fit the entire figure and does not default to its natural fixed pixel width. Do this for all images by applying it to css_custom_reset.css.
+*/
+
+
+aside{
+    float: left;
+    box-sizing: border-box;
+}
+
+.second {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+}
+.first{
+    width: 60%;
+    float: left;
+}
