@@ -10,11 +10,11 @@ class AssocOptions
   )
 
   def model_class
-    
+    class_name.constantize
   end
 
   def table_name
-    
+    class_name.downcase + "s"
   end
 end
 
@@ -25,14 +25,14 @@ end
 
 class BelongsToOptions < AssocOptions
   def initialize(name, options = {})
-    
+    name = name.to_s
     default = {
       primary_key: :"id",
       foreign_key: :"#{name}_id",
       class_name: "#{name.capitalize}"
     }
 
-    options = options.empty? ? default : options
+    options = default.merge(options)
     
     self.primary_key = options[:primary_key]
     self.foreign_key = options[:foreign_key]
@@ -42,14 +42,14 @@ end
 
 class HasManyOptions < AssocOptions
   def initialize(name, self_class_name, options = {})
-    
+    name = name.to_s
     default = {
       primary_key: :"id",
       foreign_key: :"#{self_class_name.downcase}_id",
       class_name: "#{name.singularize.capitalize}"
     }
 
-    options = options.empty? ? default : options
+    options = default.merge(options)
     
     self.primary_key = options[:primary_key]
     self.foreign_key = options[:foreign_key]
@@ -84,5 +84,5 @@ module Associatable
 end
 
 class SQLObject
-  # Mixin Associatable here...
+  extend Associatable
 end
