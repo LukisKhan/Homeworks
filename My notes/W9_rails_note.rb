@@ -48,6 +48,8 @@ Step 6: sending data as JSON (java hash-like objects uses strings as key-val pai
 Step 7: exposing a single bleat
     Rails.application.routes.draw do
         get "/bleats/:id", to: "bleats#show"
+
+        post "/bleats", to: "bleats#create"
     end
     class BleatsController
         def index
@@ -60,5 +62,35 @@ Step 7: exposing a single bleat
             #params is a hash with indifferent access, can use "id" or :id
             #SELECT "bleats".* FROM "bleats" WHERE "bleats"."id" = 3
         end
+        def create
+            bleat = Bleat.new( 
+                body:       params[:body], 
+                author_id:  params[:author_id]
+            )
+            if bleat.save
+                render json: bleat
+            else
+                render json: bleat.errors.full_messages, staus: 422
+            end
+        end
+        end
     localhost:3000/bleats/5?key1=tommy&key2-mashu
     Parameter: { "key1" => "tommy", "key2" => "mashu", "id" => "5"}
+3 WAYS to grab data
+        using wild card :id
+        passing data into body
+        passing data using string query using ?key1=val1&key2=val2
+Step 8:
+        using nested hash to pass in any number of args into the body
+        bleat = Bleat.new( 
+            body: params[:body], 
+            author_id:  params[:author_id])
+        #is the same AS:
+        bleat_params = params.require([bleat]).permit(:author_id, :id)
+        bleat = Bleat.new(bleat_params)
+        #when params = { "bleat" => {"body" => "Hello World", "author_id" => "1" }, 
+        #                "controller":"bleats", "action": "create"}
+Step 9: put request
+Step 10: Destroy request
+        destroy also includes destroy life-cycle hooks (dependent: :destroy)
+        dont use delete
