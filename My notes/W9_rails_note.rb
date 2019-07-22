@@ -94,3 +94,12 @@ Step 9: put request
 Step 10: Destroy request
         destroy also includes destroy life-cycle hooks (dependent: :destroy)
         dont use delete
+Step 11: generic routes
+        bundle exec rails routes
+Step 12: using resource short hand
+        resources :bleats, only: [:index, :show, :create, :update, :destroy]
+            URI Patter
+GET         /bleats(.:format)                   bleats#index
+GET         /bleats/:id(.:format)               bleats#show
+PUT         /bleats/:id(.:format)               bleats#update
+DELETE      /bleats/:id(.:format)               bleats#destroy
