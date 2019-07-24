@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: cats
+#
+#  id          :bigint           not null, primary key
+#  birth_date  :date
+#  color       :text
+#  name        :text             not null
+#  sex         :text
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  birth_date: 2019-07-24
+  color: MyText
+  name: MyText
+  sex: MyText
+  description: MyText
+
+two:
+  birth_date: 2019-07-24
+  color: MyText
+  name: MyText
+  sex: MyText
+  description: MyText
