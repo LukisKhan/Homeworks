@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-  get 'comments/destroy'
-  get 'comments/index'
   get 'artwork_shares_controller/create'
   get 'artwork_shares_controller/destroy'
   get 'artwork_shares_controller/user_params'
@@ -21,6 +18,12 @@ Rails.application.routes.draw do
     resources :artworks, only: [:index]
   end
   resources :artwork_shares, only: [:create, :destroy]
+
+  
+  post 'comments', to: 'comments#create'
+  delete 'comments/:id', to: 'comment#destroy'
+  get 'comments/:id', to: 'comment#index'
+  
 
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
