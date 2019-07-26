@@ -1,0 +1,24 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+<form action="<%= users_url %>" method="POST">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+
+    <label for="user_name">User_name</label>
+    <input type="user_name"
+        name="user[user_name]"
+        value="<%= @user.user_name %>"/>
+
+    <label>
+    Password
+        <input type="password" name="user[password]"/>
+    </label>
+    <input type ="submit" value="Create My Account" />
+</form>
