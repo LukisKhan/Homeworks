@@ -24,4 +24,13 @@ RSpec.describe User, type: :model do
     it { should have_many(:comments) }
   end 
 
+  describe "#is_password?" do
+    let(:user1) { create(:user) }
+    #  = FactoryBot.build(:createUser)
+   
+    it "returns true" do
+      expect(user1.is_password?("abcdef")).to be(true)
+    end
+  end
+
 end
