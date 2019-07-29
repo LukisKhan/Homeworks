@@ -13,6 +13,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
+  # subject(:user) do 
+  #   User.create!(
+  #     username: "trevor",
+  #     password: "abcdef"
+  #   )
+  # end
+
   describe "validations" do
     it { should validate_presence_of(:username) }  
     it { should validate_presence_of(:session_token) }
@@ -24,13 +32,21 @@ RSpec.describe User, type: :model do
     it { should have_many(:comments) }
   end 
 
+  
+  #test for user model
   describe "#is_password?" do
-    let(:user1) { create(:user) }
-    #  = FactoryBot.build(:createUser)
-   
+    # let(:user1) { create(:user) }
     it "returns true" do
-      expect(user1.is_password?("abcdef")).to be(true)
+      expect(user.is_password?("abcdef")).to be(true)
     end
   end
+
+  describe "User::find_by_credential" do
+    it "returns the correct user" do
+
+    end
+  end
+
+
 
 end
