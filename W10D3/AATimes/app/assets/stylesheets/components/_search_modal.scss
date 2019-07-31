@@ -3,14 +3,38 @@
     left: calc(-50vw + 50%);
 }
 
-.search-modal .buttons {
+.search-modal.expand {
+    max-height: 300px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.06);
+    border-bottom: 1px solid $light-gray;
+    border-top: 1px solid $light-gray;
+}
 
+.search-modal .buttons {
+    max-width: 40%;
+    min-width: 300px;
+    margin: 25px auto;
 }
 
 .search-modal .buttons input {
-
+    border: 1px solid $light-gray;
+    box-shadow: inset 2px 3px 3px rgba(0,0,0,0.07);
+    border-radius: 3px;
 }
 
 .search-modal .buttons button {
-    
+    margin-left: 10px;
+    background: white;
+    font-weight: normal;
+    color: $gray;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+}
+
+button.close {
+
+}
+
+button.close:hover {
+    background: $gray;
 }
