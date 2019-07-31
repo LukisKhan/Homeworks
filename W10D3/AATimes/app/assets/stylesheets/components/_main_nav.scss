@@ -8,7 +8,6 @@
 .right-nav > ul {
     display: flex;
     align-items: flex-start;
-
 }
 
 .left-nav > ul > li {
@@ -18,12 +17,18 @@
     margin: 10px;
 }
 
-.right-nav > ul > li {
+li {
+    list-style: none;
+}
 
+.right-nav > ul > li {
+    padding: 5px;
 }
 
 .right-nav > ul > li:last-of-type {
-
+	position: relative;
+	padding: 7px 9px;
+	transition: background-color 0.3s;
 }
 
 .left-nav > ul > li:hover,
@@ -38,5 +43,5 @@
 
 
 .right-nav i {
-
+    font-size: 16px;
 }
