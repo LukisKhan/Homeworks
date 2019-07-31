@@ -7,3 +7,9 @@
 .locations li {
     list-style: none;
 }
+
+@media all and (max-width: 1000px) {
+  .locations {
+    display: none;
+  }
+}
