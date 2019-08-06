@@ -1,0 +1,18 @@
+/* PHASE 4: Footer */
+footer {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.links {
+    display: flex;
+    background-color: greenyellow;
+    justify-content: space-around;
+}
+
+footer >ul {
+     display: flex;
+     flex-direction: row;
+}
