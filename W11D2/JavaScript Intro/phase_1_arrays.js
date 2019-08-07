@@ -48,14 +48,15 @@ let arrayTranspose = [
 Array.prototype.transpose = function () {
     let array2 = [[],[],[]];
     for ( let i = 0; i < this.length; i++ ) {
-        for ( let j = 0; i < this.length; j ++ ) {
-            debugger;
+        for ( let j = 0; j < this.length; j ++ ) {
             array2[j][i] = this[i][j];
         }
     }
+    return array2;
 }
 
 
-console.log(arrayTranspose.transpose());
-
+// console.log(arrayTranspose);
+// console.log(arrayTranspose.transpose());
+// console.log(arrayTranspose);
 
