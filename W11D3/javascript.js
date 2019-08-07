@@ -3,8 +3,9 @@ function titleize( names, printOut ) {
     printOut(title);
 }
 
-titleize( ["Mary", "Brian", "Leo"], (names) => {
+titleize( ["Mary", "Brian", "Leo"], function (names) {
     names.forEach(name => console.log(name));
+    console.log("this is new log");
 });
 
 function Elephant(name, height, tricks) {
@@ -30,8 +31,17 @@ Elephant.prototype.play = function () {
     console.log(`${this.name} is ${this.tricks[randomTrickIndex()]}!`);
 };
 
-Elephant.paradeHelper = function (elephant) {
+Elephant.paradeHelper = elephant => {
     console.log(`${elephant.name} is parading by!`);
 };
+
+let ellie = new Elephant("Ellie", 185, ["giving human friends a ride", "playing hide and seek"]);
+let charlie = new Elephant("Charlie", 200, ["painting pictures", "spraying water for a slip and slide"]);
+let kate = new Elephant("Kate", 234, ["writing letters", "stealing peanuts"]);
+let micah = new Elephant("Micah", 143, ["trotting", "playing tic tac toe", "doing elephant ballet"]);
+
+let herd = [ellie, charlie, kate, micah];
+herd.forEach( elephant => { Elephant.paradeHelper(elephant) } );
+
 
 
