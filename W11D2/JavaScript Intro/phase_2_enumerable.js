@@ -39,11 +39,14 @@ let arrayMapped = [7, 8, 9];
 // console.log(arrayMapped);
 
 Array.prototype.myReduce = function (callback, initialVal) {
-    initialVal ||= this[0];
+    !initialVal ? this[0] : initialVal;
     this.myEach(function (element) {
-        initialVal = callback(element)
+        initialVal += callback(element)
     });
     return initialVal;
 
 }
 
+const func = (arg1, arg2 ) => { arg1 + arg2 };
+result = arrayMapped.myReduce(func, 3);
+console.log(result);
