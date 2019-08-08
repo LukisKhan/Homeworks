@@ -48,8 +48,14 @@ herd.forEach( elephant => { Elephant.paradeHelper(elephant) } );
 function dinerBreakfast () {
     let foods = "I'd like cheesey scrambled eggs please."
     console.log(foods);
+
+    this.func = function () { return foods; };
+
     return function (food) {
         foods = `${foods.slice(0, foods.length - 8)} and ${food} please.`
         console.log(foods);
     }
 }
+
+let bfastOrder = dinerBreakfast();
+bfastOrder("grits");
