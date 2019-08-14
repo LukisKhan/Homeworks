@@ -34,8 +34,16 @@ body {
 
 h1 {
   width: 100%;
-  margin: 0 0 0 calc(100%/2 - 80px);
+  margin: 0 0 0 calc(100%/2 - 70px);
   align-items: center;
-  color: rgb(95, 203, 95);
+  color: cornflowerblue;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2 {
+  width: 100%;
+  margin: 0 0 0 calc(100%/2 - 60px);
+  align-items: center;
+  color: darkcyan;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

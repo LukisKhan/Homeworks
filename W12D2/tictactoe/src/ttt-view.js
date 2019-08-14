@@ -21,14 +21,16 @@ class View {
       $square.text(this.game.currentPlayer);
       if (this.game.currentPlayer === "x") {
         $square.css("background-color", "purple");
+        $square.css("color", "orange");
       } else {
         $square.css("background-color", "pink");
+        $square.css("color", "green");
       }
     }
     if (this.game.isOver()) {
       if (this.game.winner()) {
         console.log(`${this.game.currentPlayer} has won!`);
-        let $message = `${this.game.currentPlayer} HAS WON!!!`
+        let $message = $(`<h2>${this.game.currentPlayer.toUpperCase()} HAS WON!!!</h2>`);
         $("body").append($message);
         $("li").off("click");
       } else {
