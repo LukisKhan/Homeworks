@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class DOMNodeCollection {\n  constructor (elementArray) {\n    this.elementArray = elementArray;\n  }\n\n  //Functions should return a DOMNodeCollection instance\n  html(innerHTML) {\n    \n  }\n}\n\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+eval("class DOMNodeCollection {\n  constructor (elementArray) {\n    this.elementArray = elementArray;\n  }\n\n  //Functions should iterate thru elements and change them OR\n  //return a DOMNodeCollection instance\n  html(argHTML) {\n    if (argHTML === undefined) return this.elementArray[0].innerHTML;\n    this.each(argHTML);\n  }\n  empty () {\n    this.each('');\n  }\n  each (argChange) {\n    for (let i = 0; i < this.elementArray.length; i++) {\n      this.elementArray[i].innerHTML = argChange;\n    }\n  }\n\n}\n\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
 
 /***/ }),
 
