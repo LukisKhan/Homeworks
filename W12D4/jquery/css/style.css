@@ -1,3 +1,27 @@
 li {
+  display: block;
   list-style-type: none;
+  background-color: grey;
+}
+
+li.red-li {
+  background-color: red;
+}
+
+li.aqua-li {
+  background-color: aqua
+}
+
+li.blue-li {
+  background-color: blue
+}
+
+div {
+  display: block;
+  background-color: rebeccapurple;
+}
+
+.test {
+  font-weight: bold;
+  color: paleturquoise;
 }
