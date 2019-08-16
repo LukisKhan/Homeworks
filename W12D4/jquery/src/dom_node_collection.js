@@ -81,8 +81,13 @@ class DOMNodeCollection {
     return new DOMNodeCollection(parentsNodes);
   }
 
-  find () {
-    
+  find (selector) {
+    let resultNodes = [];
+    this.each( node => {
+      const resultList = node.querySelectorAll(selector);
+      resultNodes = resultNodes.concat(Array.from(resultList));
+    });
+    return new DOMNodeCollection(resultNodes);
   }
 
 }
