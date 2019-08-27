@@ -25,6 +25,7 @@ class PokemonDetail extends Component {
         console.log('pokemon details render');
         const { pokemon, items, loading } = this.props;
         // debugger;
+        console.log(items);
         // if (loading) {
         //     return <section className="pokemon-detail"><LoadingIcon /></section>;
         // }
@@ -46,8 +47,11 @@ class PokemonDetail extends Component {
                 </ul>
                 <section className="toys">
                     <h3>Items</h3>
-                    <ul className="toy-list">
+                    {/* <ul className="toy-list">
                         {items.map(item => <Item key={item.name} item={item} />)}
+                    </ul> */}
+                    <ul>
+                        {items.map (item => <li key={item.name}>{item.name}</li>)} 
                     </ul>
                 </section>
 

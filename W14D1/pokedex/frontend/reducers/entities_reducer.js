@@ -3,8 +3,8 @@ import pokemonReducer from './pokemon_reducer'
 import itemReducer from './item_reducer'
 
 const entitiesReducer = combineReducers({
-  pokemon: pokemonReducer
-  // item: itemReducer
+  pokemon: pokemonReducer,
+  item: itemReducer
 })
 
 
