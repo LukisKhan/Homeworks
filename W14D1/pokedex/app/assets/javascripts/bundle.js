@@ -708,13 +708,14 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
 /*!****************************************!*\
   !*** ./frontend/reducers/selectors.js ***!
   \****************************************/
-/*! exports provided: selectAllPokemon, selectPokeItems */
+/*! exports provided: selectAllPokemon, selectPokeItems, selectPokemonItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAllPokemon", function() { return selectAllPokemon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectPokeItems", function() { return selectPokeItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectPokemonItem", function() { return selectPokemonItem; });
 var selectAllPokemon = function selectAllPokemon(state) {
   return Object.values(state.entities.pokemon);
 };
@@ -723,6 +724,9 @@ var selectPokeItems = function selectPokeItems(state, pokemon) {
   return pokemon ? pokemon.item_ids.map(function (id) {
     return state.entities.item[id];
   }) : [];
+};
+var selectPokemonItem = function selectPokemonItem(state, id) {
+  return state.entities.item[id];
 };
 
 /***/ }),

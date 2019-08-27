@@ -7,3 +7,7 @@ export const selectPokeItems = (state, pokemon) => {
   // debugger;
   return pokemon ? pokemon.item_ids.map(id => state.entities.item[id]) : [];
 };
+
+export const selectPokemonItem = (state, id) => {
+  return state.entities.item[id];
+};
