@@ -9,8 +9,8 @@ class Greeting extends Component {
     render() {
       const display = this.props.currentUser ? (
         <div>
-          <h3>Welcome {currentUser.username}!</h3>
-          <button onClick={logout}>Logout</button>
+          <h3>Welcome {this.props.currentUser.username}!</h3>
+          <button onClick={this.props.logout}>Logout</button>
         </div>
       ) : (
         <div>

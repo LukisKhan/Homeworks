@@ -6,21 +6,6 @@ export const signup = (user) => {
     });
 };
 
-// const user = {
-//   id: 1,
-//   username: "",
-//   password: "password"
-// }
-
-// const data = {
-//   user: {
-//     id: 1,
-//     username: "",
-//     email: "",
-//     password: "password"
-//   }
-// }
-
 export const login = (user) => {
     return $.ajax({
         url: '/api/session',

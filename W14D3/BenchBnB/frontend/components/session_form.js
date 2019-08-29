@@ -7,10 +7,9 @@ class SessionForm extends React.Component {
             username: '',
             password: '',
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
@@ -19,18 +18,23 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state)
-            .then(() => this.props.history.push('/chirps'));
+        console.log(this.props.formType);
+        // debugger;
+        if(this.props.formType === "login")
+            this.props.login(this.state).then(() => this.props.history.push('/'));
+        else
+            this.props.signup(this.state).then(() => this.props.history.push('/'));
     }
 
     render() {
-        // console.log(this.props);
+        let headerText = "";
+        this.props.formType === 'login' ? headerText = "Log in!": headerText = "Sign up!";
         return (
             <div className="session-form">
-                <h2>Log In!</h2>
+                <h2>{headerText}</h2>
                 <form>
                     <label>Username:
-          <input
+                        <input
                             type="text"
                             value={this.state.username}
                             onChange={this.handleInput('username')}
@@ -38,12 +42,12 @@ class SessionForm extends React.Component {
                     </label>
 
                     <label>Password:
-          <input
+                        <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
-                        <button onClick={this.handleSubmit}>Log In!</button>
+                        <button onClick={this.handleSubmit}>{headerText}</button>
                     </label>
                 </form>
             </div>
