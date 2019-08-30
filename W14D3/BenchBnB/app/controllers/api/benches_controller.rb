@@ -1,10 +1,13 @@
 class Api::BenchesController < ApplicationController
   def index
-    @benches = Bench.all
-    # render json: ["got the benches"]
+    @benches = Bench.in_bounds(params[:bounds])
+    # @benches = Bench.all
+    # debugger
     render :index
   end
 
   def create
   end
+
+
 end

@@ -8,7 +8,8 @@ class BenchIndex extends React.Component {
   }
   render() {
     let benchList = "";
-  if(Object.keys(this.props.benches).length > 0){
+    if(Object.keys(this.props.benches).length > 0){
+      // debugger;
         benchList = Object.values(this.props.benches).map( bench => (
             <BenchIndexItem bench={bench} key={bench.id}/>
             ));

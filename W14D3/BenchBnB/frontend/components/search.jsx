@@ -5,10 +5,10 @@ import BenchIndex from './bench_index';
 const Search = ({benches, fetchBenches}) => {
   return (
     <div>
-      <BenchMap />
-      <BenchIndex benches={benches} fetchBenches={fetchBenches} />
+      <BenchMap benches={ benches } />
+      <BenchIndex benches={ benches } fetchBenches={fetchBenches} />
     </div>
   )
-}
+};
 
 export default Search;

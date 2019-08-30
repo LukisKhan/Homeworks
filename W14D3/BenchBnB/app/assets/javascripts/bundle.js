@@ -351,6 +351,7 @@ function (_React$Component) {
       var benchList = "";
 
       if (Object.keys(this.props.benches).length > 0) {
+        // debugger;
         benchList = Object.values(this.props.benches).map(function (bench) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             bench: bench,
@@ -435,9 +436,84 @@ function (_Component) {
   !*** ./frontend/components/bench_map.jsx ***!
   \*******************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/luatpham/new/Homeworks/W14D3/BenchBnB/frontend/components/bench_map.jsx: Unterminated JSX contents (19:71)\n\n\u001b[0m \u001b[90m 17 | \u001b[39m    render() {\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m        \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m \u001b[36mclass\u001b[39m\u001b[33m=\u001b[39m\u001b[32m\"map-container\"\u001b[39m ref\u001b[33m=\u001b[39m{map \u001b[33m=>\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmapNode \u001b[33m=\u001b[39m map}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m        )\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m    } \u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m}\u001b[0m\n    at Object.raise (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.jsxReadToken (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3232:14)\n    at Object.getTokenFromCode (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3610:19)\n    at Object.nextToken (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6525:12)\n    at Object.next (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6465:10)\n    at Object.eat (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6470:12)\n    at Object.expect (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:7628:10)\n    at Object.jsxParseOpeningElementAfterName (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3495:10)\n    at Object.jsxParseOpeningElementAt (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3483:17)\n    at Object.jsxParseElementAt (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3515:33)\n    at Object.jsxParseElement (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3589:17)\n    at Object.parseExprAtom (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3596:19)\n    at Object.parseExprSubscripts (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseParenAndDistinguishExpression (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8978:28)\n    at Object.parseExprAtom (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8762:21)\n    at Object.parseExprAtom (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseExpression (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8135:23)\n    at Object.parseReturnStatement (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:10198:28)\n    at Object.parseStatementContent (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:9877:21)\n    at Object.parseStatement (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:10405:25)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BenchMap; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/marker_manager */ "./frontend/util/marker_manager.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var BenchMap =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(BenchMap, _React$Component);
+
+  function BenchMap() {
+    _classCallCheck(this, BenchMap);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(BenchMap).apply(this, arguments));
+  }
+
+  _createClass(BenchMap, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var mapOptions = {
+        center: {
+          lat: 37.7758,
+          lng: -122.435
+        },
+        zoom: 13
+      };
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+      this.MarkerManager = new _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__["default"](this.map);
+      this.MarkerManager.updateMarkers(this.props.benches);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      console.log(this.props.benches);
+      this.MarkerManager.updateMarkers(this.props.benches);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "map-container",
+        ref: function ref(map) {
+          return _this.mapNode = map;
+        }
+      });
+    }
+  }]);
+
+  return BenchMap;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
 
 /***/ }),
 
@@ -630,7 +706,9 @@ __webpack_require__.r(__webpack_exports__);
 var Search = function Search(_ref) {
   var benches = _ref.benches,
       fetchBenches = _ref.fetchBenches;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_map__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    benches: benches
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     benches: benches,
     fetchBenches: fetchBenches
   }));
@@ -836,7 +914,7 @@ __webpack_require__.r(__webpack_exports__);
 var benchesReducer = function benchesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
+  Object.freeze(state); // debugger;
 
   switch (action.type) {
     case _actions_bench_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_BENCHES"]:
@@ -1062,6 +1140,7 @@ var configureStore = function configureStore() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBenches", function() { return fetchBenches; });
 var fetchBenches = function fetchBenches() {
+  var filters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return $.ajax({
     method: "GET",
     url: "api/benches",
@@ -1070,6 +1149,87 @@ var fetchBenches = function fetchBenches() {
     }
   });
 };
+
+/***/ }),
+
+/***/ "./frontend/util/marker_manager.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/marker_manager.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var MarkerManager =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(MarkerManager, _Component);
+
+  function MarkerManager(map) {
+    var _this;
+
+    _classCallCheck(this, MarkerManager);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(MarkerManager).call(this));
+    _this.map = map;
+    _this.markers = {};
+    return _this;
+  }
+
+  _createClass(MarkerManager, [{
+    key: "updateMarkers",
+    value: function updateMarkers(benches) {
+      var _this2 = this;
+
+      console.log("time to update");
+      Object.values(benches).map(function (bench) {
+        if (!_this2.markers[bench.id]) {
+          _this2.markers[bench.id] = bench;
+        }
+      });
+      Object.values(this.markers).map(function (bench) {
+        return _this2.createMarkersFromBench(bench);
+      });
+    }
+  }, {
+    key: "createMarkersFromBench",
+    value: function createMarkersFromBench(bench) {
+      var myLatlng = new google.maps.LatLng(bench.lat, bench.lng);
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        title: bench.description
+      });
+      marker.setMap(this.map);
+    }
+  }]);
+
+  return MarkerManager;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (MarkerManager);
 
 /***/ }),
 
