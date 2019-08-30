@@ -1,5 +1,6 @@
-import BenchIndex from "./bench_index.jsx";
+// import BenchIndex from "./bench_index.jsx";
 import { connect } from 'react-redux';
+import Search from './search'
 
 const mapStateToProps = state => ({
   benches: state.entities.benches,
@@ -12,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BenchIndex);
+)(Search);

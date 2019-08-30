@@ -6,10 +6,9 @@ class BenchIndex extends React.Component {
     // request benches from your API here
     this.props.fetchBenches();
   }
-
   render() {
     let benchList = "";
-    if(Object.keys(this.props.benches).length > 0){
+  if(Object.keys(this.props.benches).length > 0){
         benchList = Object.values(this.props.benches).map( bench => (
             <BenchIndexItem bench={bench} key={bench.id}/>
             ));

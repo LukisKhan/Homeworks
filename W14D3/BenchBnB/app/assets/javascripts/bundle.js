@@ -268,7 +268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login_form_container */ "./frontend/components/login_form_container.js");
 /* harmony import */ var _signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signup_form_container */ "./frontend/components/signup_form_container.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _bench_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./bench_index_container */ "./frontend/components/bench_index_container.js");
+/* harmony import */ var _search_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./search_container */ "./frontend/components/search_container.js");
 
 
 
@@ -287,7 +287,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
-    component: _bench_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _search_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }));
 };
 
@@ -370,48 +370,6 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/bench_index_container.js":
-/*!******************************************************!*\
-  !*** ./frontend/components/bench_index_container.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _bench_index_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bench_index.jsx */ "./frontend/components/bench_index.jsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-
-
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    benches: state.entities.benches
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchBenches: function (_fetchBenches) {
-      function fetchBenches() {
-        return _fetchBenches.apply(this, arguments);
-      }
-
-      fetchBenches.toString = function () {
-        return _fetchBenches.toString();
-      };
-
-      return fetchBenches;
-    }(function () {
-      return dispatch(fetchBenches());
-    })
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_bench_index_jsx__WEBPACK_IMPORTED_MODULE_0__["default"]));
-
-/***/ }),
-
 /***/ "./frontend/components/bench_index_item.jsx":
 /*!**************************************************!*\
   !*** ./frontend/components/bench_index_item.jsx ***!
@@ -469,6 +427,17 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (BenchIndexItem);
+
+/***/ }),
+
+/***/ "./frontend/components/bench_map.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/bench_map.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/luatpham/new/Homeworks/W14D3/BenchBnB/frontend/components/bench_map.jsx: Unterminated JSX contents (19:71)\n\n\u001b[0m \u001b[90m 17 | \u001b[39m    render() {\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m        \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m \u001b[36mclass\u001b[39m\u001b[33m=\u001b[39m\u001b[32m\"map-container\"\u001b[39m ref\u001b[33m=\u001b[39m{map \u001b[33m=>\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmapNode \u001b[33m=\u001b[39m map}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m        )\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m    } \u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m}\u001b[0m\n    at Object.raise (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6325:17)\n    at Object.jsxReadToken (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3232:14)\n    at Object.getTokenFromCode (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3610:19)\n    at Object.nextToken (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6525:12)\n    at Object.next (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6465:10)\n    at Object.eat (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:6470:12)\n    at Object.expect (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:7628:10)\n    at Object.jsxParseOpeningElementAfterName (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3495:10)\n    at Object.jsxParseOpeningElementAt (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3483:17)\n    at Object.jsxParseElementAt (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3515:33)\n    at Object.jsxParseElement (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3589:17)\n    at Object.parseExprAtom (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3596:19)\n    at Object.parseExprSubscripts (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseParenAndDistinguishExpression (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8978:28)\n    at Object.parseExprAtom (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8762:21)\n    at Object.parseExprAtom (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:3601:20)\n    at Object.parseExprSubscripts (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8412:23)\n    at Object.parseMaybeUnary (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8392:21)\n    at Object.parseExprOps (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8267:23)\n    at Object.parseMaybeConditional (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8240:23)\n    at Object.parseMaybeAssign (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8187:21)\n    at Object.parseExpression (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:8135:23)\n    at Object.parseReturnStatement (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:10198:28)\n    at Object.parseStatementContent (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:9877:21)\n    at Object.parseStatement (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:9829:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/luatpham/new/Homeworks/W14D3/BenchBnB/node_modules/@babel/parser/lib/index.js:10405:25)");
 
 /***/ }),
 
@@ -638,6 +607,79 @@ var Root = function Root(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./frontend/components/search.jsx":
+/*!****************************************!*\
+  !*** ./frontend/components/search.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _bench_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bench_map */ "./frontend/components/bench_map.jsx");
+/* harmony import */ var _bench_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bench_index */ "./frontend/components/bench_index.jsx");
+
+
+
+
+var Search = function Search(_ref) {
+  var benches = _ref.benches,
+      fetchBenches = _ref.fetchBenches;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_map__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    benches: benches,
+    fetchBenches: fetchBenches
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./frontend/components/search_container.js":
+/*!*************************************************!*\
+  !*** ./frontend/components/search_container.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ "./frontend/components/search.jsx");
+// import BenchIndex from "./bench_index.jsx";
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    benches: state.entities.benches
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchBenches: function (_fetchBenches) {
+      function fetchBenches() {
+        return _fetchBenches.apply(this, arguments);
+      }
+
+      fetchBenches.toString = function () {
+        return _fetchBenches.toString();
+      };
+
+      return fetchBenches;
+    }(function () {
+      return dispatch(fetchBenches());
+    })
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
