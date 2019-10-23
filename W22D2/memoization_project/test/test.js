@@ -1,9 +1,6 @@
 const util = require('./util');
 const chai = require('chai');
-// const { expect } = chai;
-
-chai.use(require('chai-spies'));
-const { expect, spy } = chai;
+const { expect } = chai;
 
 const { 
     lucasNumberMemo,

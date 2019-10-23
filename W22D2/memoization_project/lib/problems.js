@@ -17,7 +17,7 @@
 // lucasNumberMemo(42)  // => 599074578
 function lucasNumberMemo(n, memo = {}) {
     if (n in memo) return memo[n]
-    if(n < 2) return 2 - n;
+    if (n < 2) return 2 - n;
     memo[n] = lucasNumberMemo(n - 1, memo) + lucasNumberMemo(n - 2, memo);
     return memo[n];
 }
@@ -32,19 +32,44 @@ function lucasNumberMemo(n, memo = {}) {
 //
 // Examples:
 //  
-// minChange([1, 2, 5], 11)         // => 3, because 5 + 5 + 1 = 11
 // minChange([1, 4, 5], 8))         // => 2, because 4 + 4 = 8
 // minChange([1, 5, 10, 25], 15)    // => 2, because 10 + 5 = 15
 // minChange([1, 5, 10, 25], 100)   // => 4, because 25 + 25 + 25 + 25 = 100
 function minChange(coins, amount, memo = {}) {
-    if (amount in memo) return Object.keys(memo).length;
-    if (coins.indexOf(amount)) return 1;
-    let remainder = amount - coins[coins.length - 1]
-    memo[amount - remainder] = coins[coins.length - 1];
-    minChange( coins, amount - remainder, memo)
-}
+    // console.log(memo);
+    // if (amount === 0) return Object.keys(memo).length;
+    // if (amount in memo) return Object.keys(memo).length;
+    // // if (coins.indexOf(amount) !== -1) return 1 + Object.keys(memo).length;
+    // let remainder = amount - coins[coins.length - 1]
+    // memo[amount - remainder] = coins[coins.length - 1];
+    // console.log(memo);
+    // console.log(1 + Object.keys(memo).length);
+    
+    // return minChange(coins, amount - remainder, memo)
 
-// minChange([1, 2, 5], 11) 
+
+    // if(amount === 0) return memo.length;
+    // if(amount < 0) return null;
+    // let remainder;
+    // console.log(memo)
+    // for(let i = 0; i < coins.length; i++){
+    //     remainder = amount - coins[i];
+    //     memo.push(coins[i])
+    //     if(minChange(coins, remainder, memo)) return memo.length
+    // };
+
+    // return 1 + minChange(coins, remainder);
+
+    if (amount === 0) return 0;
+
+    if (amount in memo) return memo[amount];
+    let numCoins = [];
+    coins.forEach(coin => {
+        if (coin <= amount) numCoins.push(minChange(coins, amount - coin, memo) + 1);
+    });
+    memo[amount] =  Math.min(...numCoins);
+    return memo[amount];
+}
 
 module.exports = {
     lucasNumberMemo,
