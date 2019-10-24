@@ -21,7 +21,17 @@
 // stepper([3, 4, 1, 0, 10]);           // => true, because we can step through elements 3 -> 4 -> 10
 // stepper([2, 3, 1, 1, 0, 4, 7, 8])    // => false, there is no way to step to the end
 function stepper(nums) {
-
+    result = new Array(nums.length + 1).fill(false);
+    result[0] = true;
+    for(let i = 0; i < nums.length; i++){
+        let current = nums[i];
+        if(result[i]){
+            for(let j = 0; j < current; j++) {
+                result[j+1] = true;
+            }
+        }
+    }
+    return result[nums.length];
 }
 
 
@@ -35,7 +45,61 @@ function stepper(nums) {
 //
 // maxNonAdjacentSum([2, 7, 9, 3, 4])   // => 15, because 2 + 9 + 4
 // maxNonAdjacentSum([4,2,1,6])         // => 10, because 4 + 6 
+// maxNonAdjacentSum([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) // => 19
 function maxNonAdjacentSum(nums) {
+    // console.log(nums)
+    // let currentMax = 0;
+    // for(let i = 0; i < nums.length; i++){
+    //     for(let j = i +2; j < nums.length; j++) {
+    //         if(nums[i] + nums[j] > currentMax) {
+    //             if (currentMax > 0) {
+    //                 currentMax = currentMax + nums[j]
+    //             } else {
+    //                 currentMax = nums[i] + nums[j]
+    //             }
+    //             j += 1
+    //         }
+    //     }
+    // }
+    // return currentMax;
+// maxNonAdjacentSum([2, 7, 9, 3, 4])   
+// [2 , 7, 11, 10, 15]
+
+// maxNonAdjacentSum([4,1,1,6,1,1])  
+// [4, 2, 5, 8]
+    if (nums.length === 0) {
+        return 0;
+    }
+    let result = new Array(nums.length).fill(0);
+    for (let i = 0; i < nums.length; i++) {
+        result[i] = nums[i];
+        for (let j = i + 2; j < nums.length; j++) {
+            if(nums[j] + nums[j-1] < nums[j+1]) {
+                result[i] += nums[j+1]
+                j += 2;
+            } else {
+                result[i] += nums[j]
+                j += 1;
+            }
+        }
+    }
+    console.log(`result ${result}`)
+    // console.log(`nums: ${nums}`)
+    return Math.max(...result);
+
+    // Donnie notes
+    // if (nums.length === 0) return 0;
+    // let table = new Array(nums.length).fill(0)
+    // table[0] = nums[0];
+    // for (let i = 1; i < table.length; i++) {
+    //     let skipLeftNeighbor = table[i-2] === undefined ? 0 : table[i -2]
+    //     let notIncludeNum = table[i-1];
+    //     let includeThisNum = skipLeftNeighbor + nums[i];
+    //     table[i] = Math.max(includeThisNum, notIncludeNum);
+
+    // }
+    // return table[table.length - 1]
+    // Donnie notes
 
 }
 
@@ -52,8 +116,21 @@ function maxNonAdjacentSum(nums) {
 // minChange([1, 4, 5], 8))         // => 2, because 4 + 4 = 8
 // minChange([1, 5, 10, 25], 15)    // => 2, because 10 + 5 = 15
 // minChange([1, 5, 10, 25], 100)   // => 4, because 25 + 25 + 25 + 25 = 100
-function minChange(coins, amount) {
+function minChange(coins, amount, memo = {}) {
+    if (amount in memo) return memo[amount];
+    if (amount === 0) return 0;
 
+    let coinArr = [];
+    let numCoins = 0;
+    coins.forEach(coin => {
+        if (coin <= amount){
+            numCoins += 1;
+            // coinArr.push(minChange(coins, amount - coin, memo) + 1)
+            coinArr.push(numCoins);
+        }
+    })
+    memo[amount] = Math.min(...coinArr);
+    return memo[amount];
 }
 
 
