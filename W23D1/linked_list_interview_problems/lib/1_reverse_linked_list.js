@@ -62,7 +62,61 @@
 // -----------
 function reverseLinkedList(linkedList) {
   // TODO: Implement the reverseLinkedList function!
+  // let counter = 0, pointerOne, pointerTwo, pointerThree;
+  // if(linkedList.length <= 1) {
+  //   return linkedList
+  // } else if(linkedList.length === 2 ){
+  //   let tempHead = linkedList.head;
+  //   linkedList.head = linkedList.tail
+  //   linkedList.tail = tempHead;
+  //   linkedList.head.next = linkedList.tail
+  //   linkedList.tail.next = null;
+  //   return linkedList;
+  // } else {
+  //   linkedList.tail = linkedList.head;
+  //   pointerOne = linkedList.head;
+  //   pointerTwo = pointerOne.next;
+  //   pointerThree = pointerTwo.next;
+  //   pointerOne.next = null;
+  //   while (pointerThree) {
+  //     pointerTwo.next = pointerOne;
+  //     pointerOne = pointerTwo;
+  //     pointerTwo = pointerThree;
+  //     pointerThree = pointerThree.next
+  //   }
+  //   linkedList.head = pointerTwo;
+  //   pointerTwo.next = pointerOne;
+  //   return linkedList;
 
+  //   let counter = linkedList.length;
+  //   let currentNode = linkedList.head;
+  //   let tempTail = linkedList.tail;
+  //   linkedList.tail = currentNode;
+
+  //   while (counter > 0) {
+  //     tempTail.next = currentNode
+  //     currentNode = currentNode.next
+  //     counter--;
+  //   }
+  // }
+
+
+  let node = linkedList.head;
+  let first = node;
+  let next = null;
+  let prev = null;
+
+  while (next = node.next) {
+    node.next = prev;
+    prev = node;
+    node = next;
+  }
+
+  linkedList.head = node;
+  linkedList.head.next = prev;
+  linkedList.tail = first;
+
+  return linkedList;
 }
 
 // ----------------------------------------
