@@ -61,6 +61,61 @@
 // -----------
 function hasCycle(linkedList) {
   // TODO: Implement the hasCycle function!
+  // let counter = 0
+  // let currentNode = linkedList.head;
+  // while (currentNode) {
+  //   currentNode = currentNode.next
+  //   counter++
+  //   if(counter > linkedList.length) return true
+  // }
+  // return false;
+  //////
+  // let currentNode = linkedList.head;
+  // let valHash = {}
+  // while (currentNode) {
+  //   // console.log(valHash);
+  //   valHash[currentNode.value] = true;
+  //   currentNode = currentNode.next
+  //   if(!currentNode) return false;
+  //   if(valHash[currentNode.value]) return true
+  //   // console.log(valHash)
+  // }
+  // return false;
+
+
+
+
+
+  if (linkedList.length === 0)
+    return false;
+  if (linkedList.length === 1) {
+    if (linkedList.head.next == linkedList.head)
+      return true;
+    else
+      return false;
+  }
+  let node1 = node2 = linkedList.head;
+  if (node2.next)
+    node2 = node2.next;
+  while (node1 != node2) {
+    node1 = node1.next;
+    node2 = node2.next;
+    if (node2 && node2.next)
+      node2 = node2.next;
+    else
+      return false;
+  }
+  return true
+
+
+
+
+
+
+
+
+
+
 
 }
 
