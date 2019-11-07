@@ -15,7 +15,7 @@ console.log(missingNum(arr1))
 // Earth is at(0, 0, 0)
 // How would you compute the k stars which are closest to Earth ?
 function k_closest_stars(sequence, k){
-  
+
 }
 
 // Implement a stack with a method max that returns the maximum value 

@@ -74,5 +74,16 @@ console.log(move_zeros(arr1))
 
 // look_and_say([1, 2, 1, 1]) == [[1, 1], [1, 2], [2, 1]]
 function look_and_say(arr){
-  
+  let res = [], pos = 0
+  res[pos] = [1,arr[0]]
+  for(let i = 1; i < arr.length; i++){
+    if(arr[i] === res[pos][1]){
+      res[pos][0]++
+    } else {
+      pos++
+      res[pos] = [1, arr[i]]
+    }
+  }
+  return res;
 }
+console.log(look_and_say([1, 2, 1, 1,1,1,1,3]))
