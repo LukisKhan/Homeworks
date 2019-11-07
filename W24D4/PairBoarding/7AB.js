@@ -56,10 +56,23 @@ console.log(weighted_random_index(arr1))
 // does not matter.
 // Algorithm should be O(n); use O(1) extra space.
 function move_zeros(array){
-  
+  let endIdx = array.length - 1;
+  for(let i = 0; i < endIdx; i++) {
+    if(array[i] === 0) {
+      while(array[endIdx] === 0) {
+        endIdx--;
+      }
+      [array[i], array[endIdx]] = [array[endIdx], array[i]]
+      endIdx--;
+      console.log(i, endIdx)
+    }
+  }
+  return array
 }
+arr1 = [0,0,0,4,3,1,2, 0]
+console.log(move_zeros(arr1))
 
 // look_and_say([1, 2, 1, 1]) == [[1, 1], [1, 2], [2, 1]]
 function look_and_say(arr){
-
+  
 }
